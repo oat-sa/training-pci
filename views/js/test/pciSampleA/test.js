@@ -70,8 +70,8 @@ define([
     /**
      * Test if all rendering elements are in place
      */
-    QUnit.asyncTest('renders correctly', function (assert) {
-
+    QUnit.test('renders correctly', function (assert) {
+        var ready = assert.async();
         var $container = $('#' + fixtureContainerId);
         assert.equal($container.length, 1, 'the item container exists');
         assert.equal($container.children().length, 0, 'the container has no children');
@@ -85,7 +85,7 @@ define([
                     assert.equal($container.find('.qti-interaction.qti-customInteraction').length, 1, 'the container contains 3 custom interactions');
                     assert.equal($container.find('.qti-customInteraction .pciSampleA').length, 1, 'the container contains 3 likert interactions');
 
-                    QUnit.start();
+                    ready();
                     runner.clear();
                 })
                 .on('error', function (error) {
@@ -100,7 +100,7 @@ define([
      * Offer a way to visually test the interaction
      */
     QUnit.test('display and play', function (assert) {
-
+        var ready = assert.async();
         var $container = $('#' + outerContainerId);
         assert.equal($container.length, 1, 'the item container exists');
         assert.equal($container.children().length, 0, 'the container has no children');
@@ -109,7 +109,7 @@ define([
             var assetManager = getAssetManager('/trainingPci/views/js/test/pciSampleA/data/likert_triple/');
             qtiItemRunner('qti', itemData, {assetManager: assetManager})
                 .on('render', function () {
-                    QUnit.start();
+                    ready();
                 })
                 .on('error', function (error) {
                     $('#error-display').html(error);
