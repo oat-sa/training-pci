@@ -28,7 +28,7 @@ define([
 ], function(stateFactory, Question, formElement, simpleEditor, containerEditor, formTpl, _, $){
     'use strict';
 
-    var LikertInteractionStateQuestion = stateFactory.extend(Question, function(){
+    var LikertInteractionStateQuestion = stateFactory.extend(Question, function init(){
 
         var $container = this.widget.$container,
             $prompt = $container.find('.prompt'),
@@ -52,7 +52,7 @@ define([
             interaction.prop('label-max', text);
         });
 
-    }, function(){
+    }, function exit(){
 
         var $container = this.widget.$container,
             $prompt = $container.find('.prompt');
@@ -94,7 +94,7 @@ define([
 
                 //update the pci property value:
                 interaction.prop('level', value);
-                
+
                 //trigger change event:
                 interaction.triggerPci('levelchange', [parseInt(value)]);
             }
