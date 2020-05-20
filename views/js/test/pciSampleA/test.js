@@ -103,7 +103,7 @@ define([
      * Test test taker interaction and the obtained response
      */
     QUnit.test('response', function (assert) {
-
+        var ready = assert.async();
         var $container = $('#' + outerContainerId);
         assert.equal($container.length, 1, 'the item container exists');
         assert.equal($container.children().length, 0, 'the container has no children');
