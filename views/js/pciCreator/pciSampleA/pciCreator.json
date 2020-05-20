@@ -16,7 +16,7 @@
     "runtime" : {
         "hook" : "./runtime/pciSampleA.js",
         "libraries" : [
-            "IMSGlobal/jquery_2_1_1",
+            "./runtime/js/jquery_2_1_1_amd.js",
             "./runtime/js/renderer.js"
         ],
         "stylesheets" : [
