@@ -25,12 +25,7 @@ return array(
 	'label' => 'QTI PCI for training',
 	'description' => '',
     'license' => 'GPL-2.0',
-    'version' => '0.5.0',
 	'author' => 'Open Assessment Technologies',
-	'requires' => array(
-	    'qtiItemPci' => '>=1.1.0',
-	    'taoQtiItem' => '>=8.5.0'
-    ),
 	'managementRole' => 'http://www.tao.lu/Ontologies/generis.rdf#trainingPciManager',
     'acl' => array(
         array('grant', 'http://www.tao.lu/Ontologies/generis.rdf#trainingPciManager', array('ext'=>'trainingPci')),
